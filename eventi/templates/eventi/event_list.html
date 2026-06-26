@@ -1,0 +1,27 @@
+{% extends 'eventi/base.html' %}
+{% block content %}
+{% if user.is_authenticated and user.role == 'organizer' %}
+<div class="d-flex justify-content-end mt-4 mb-4">
+    <a href="{% url 'eventi:event_create' %}" class="btn btn-outline-light px-5">+ AGGIUNGI FILM</a>
+</div>
+{% else %}
+<div class="mt-4"></div>
+{% endif %}
+<div class="row text-center">
+{% for event in events %}
+<div class="col-md-4 mb-5">
+    <div class="movie-card">
+        <a href="{% url 'eventi:event_detail' event.pk %}">
+            <img src="https://placehold.co/600x800/003366/ffffff?text={{ event.title }}" class="img-fluid rounded shadow-lg" alt="Locandina">
+        </a>
+        <a href="{% url 'eventi:event_detail' event.pk %}" class="movie-title">{{ event.title|upper }}</a>
+        <p class="small text-white-50"> {{ event.date|date:"d M Y - H:i" }} | Sala: {{ event.location }}</p>
+    </div>
+</div>
+{% empty %}
+<div class="col-12 text-center py-5">
+    <p class="lead text-white-50">Nessun film in programmazione al momento.</p>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
