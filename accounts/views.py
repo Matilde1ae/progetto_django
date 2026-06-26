@@ -18,5 +18,6 @@ class SignUpView(CreateView):
     template_name = 'accounts/signup.html'
 
     def form_valid(self, form):
-        messages.success(self.request, 'Registrazione avvenuta con successo ' + self.request.user.username)
+        username = form.cleaned_data.get('username')
+        messages.success(self.request, f'Registrazione avvenuta con successo! Benvenuto {username}.')
         return super().form_valid(form)

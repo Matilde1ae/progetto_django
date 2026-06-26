@@ -4,6 +4,6 @@ from .views import SignUpView
 
 urlpatterns = [
     path('login/', LoginView.as_view(template_name='accounts/login.html'), name='login'),
-    path('logout/', LogoutView.as_view(next_page='event_list'), name='logout'),
+    path('logout/', LogoutView.as_view(next_page='eventi:event_list'), name='logout'),
     path('signup/', SignUpView.as_view(), name='signup'),
 ]
