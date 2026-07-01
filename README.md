@@ -2,7 +2,7 @@
 
 ### Autore
 * **Nome e Cognome:** Matilde Giuliani
-* **Matricola:** 7133890
+
 
 ---
 
