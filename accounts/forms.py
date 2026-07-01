@@ -8,11 +8,10 @@ CustomUser = get_user_model()
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=False, label="Email")
     numero_telefono = forms.CharField(required=False, label="Numero Telefono")
-    role = forms.ChoiceField(choices=CustomUser.ROLE_CHOICES, required=True, label="Registrati come")
 
     class Meta(UserCreationForm.Meta):
         model =CustomUser
-        fields = UserCreationForm.Meta.fields + ('email', 'numero_telefono', 'role')
+        fields = UserCreationForm.Meta.fields + ('email', 'numero_telefono')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
