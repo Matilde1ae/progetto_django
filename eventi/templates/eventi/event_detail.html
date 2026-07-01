@@ -29,15 +29,15 @@
                     {% else %}
                         <form action="{% url 'eventi:book_event' event.pk %}" method="post">
                             {% csrf_token %}
-                            <button type="submit" class="btn btn-lg btn-success fw-bold w-100">PRENOTA UN POSTO IN SALA</button>
+                            <button type="submit" class="btn btn-lg btn-success fw-bold w-100">PRENOTA UN POSTO</button>
                         </form>
                     {% endif %}
                     </div>
                 {% elif user.role == 'organizer' and event.organizer == user %}
                     <div class="alert alert-info small py-2 mb-3">Sei il gestore di questo evento</div>
                     <div class="d-flex gap-2">
-                        <a href="{% url 'eventi:event_update' event.pk %}" class="btn btn-warning flex-grow-1 fw-bold">MODIFICA FILM</a>
-                        <form action="{% url 'eventi:event_delete' event.pk %}" method="post" style="display: inline;" onsubmit="return confirm('Vuoi eliminare il film?');">
+                        <a href="{% url 'eventi:event_update' event.pk %}" class="btn btn-warning flex-grow-1 fw-bold">MODIFICA EVENTO</a>
+                        <form action="{% url 'eventi:event_delete' event.pk %}" method="post" style="display: inline;" onsubmit="return confirm('Vuoi eliminare questo evento?');">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-danger fw-bold">ELIMINA EVENTO</button>
                         </form>
