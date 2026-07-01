@@ -18,8 +18,8 @@ L'applicazione gestisce un sistema di eventi cinematografici. Permette agli uten
 ## 2. Tipo di progetto e framework
 ###
 * **Tipologia:** Full-Stack Web Application
-* **Framework Backend:** Django 6.0.6 (Python 3.12)
-* **Frontend:** HTML5, CSS3, Bootstrap 5
+* **Framework Backend:** Django
+* **Frontend:** HTML5, CSS, Bootstrap
 ---
 ##  3.Funzionalità implementate per Ruolo
 
@@ -50,12 +50,28 @@ Utilizzare le seguenti credenziali:
 * **Profilo Amministratore (Organizer):**
   * **Username:** `admin_demo1`
   * **Password:** `admin8120`
+  
 * **Profilo Organizzatore(Organizer):**
   * **Username:** `Isabella`
   * **Password:** `biqrAb-xuzra4-kukweg`
 ## 6. Local Setup Instructions
 ###
+## Link del progetto online
+Il sito è raggiungibile al seguente indirizzo:(https://progettodjango-production-43ca.up.railway.app)
 
+## Create virtual environment
+-su macOS/linux: 
+python3 -m venv .venv
+source .venv/bin/activate
+-su windows: 
+python -m venv .venv
+.venv\Scripts\activate
+## Install Requirements:
+pip install -r requirements.txt
+## Apply migrations:
+python manage.py migrate
+## Run server:
+python manage.py runserver
 ```bash
-git clone []
-cd [progetto_django]
+git clone [https://github.com/Matilde1ae/progetto_django.git]
+
